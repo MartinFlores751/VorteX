@@ -18,7 +18,7 @@ LWindow::LWindow() {
 
 bool LWindow::init() {
 	// Create window
-	mWindow = SDL_CreateWindow("Project X", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+	mWindow = SDL_CreateWindow("Project X", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN | SDL_WINDOW_BORDERLESS);
 	if (mWindow != nullptr) {
 		mMouseFocus = true;
 		mKeyboardFocus = true;
@@ -162,7 +162,6 @@ void LWindow::render() {
 }
 
 void LWindow::clear() {
-	SDL_SetRenderDrawColor(mRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
 	SDL_RenderClear(mRenderer);
 }
 

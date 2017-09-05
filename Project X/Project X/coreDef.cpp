@@ -6,14 +6,16 @@
 #include "LTexture.h"
 #include "LWindow.h"
 #include "core.h"
+#include "Ship.h"
 
 extern LWindow gWindow;
+extern Ship playerShip;
 using std::string;
 
 bool init() {
 	bool isGood = true;
 	// Initialize SDL
-	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0) {
 		printf("Failed to initialize video module! SDL Error: %s \n", SDL_GetError());
 		isGood = false;
 	}
@@ -59,12 +61,17 @@ bool loadMedia() {
 	bool isGood = true;
 
 	// Initialize textures and stuff here!
+	if (!playerShip.init(gWindow.getRenderer(), "img/player_ship.png")) {
+		printf("File could not be found! Ending program...");
+		isGood = false;
+	}
 
 	return isGood;
 }
 
 void Quit() {
 	gWindow.free();
+	
 
 	// Quits the subsystems and the main SDL
 	IMG_Quit();

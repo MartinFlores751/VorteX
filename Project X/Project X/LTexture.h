@@ -1,4 +1,8 @@
 #pragma once
+
+#include <SDL.h>
+#include <string>
+
 class LTexture {
 public:
 	LTexture();

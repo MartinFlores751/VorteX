@@ -5,8 +5,12 @@
 
 //CONST and ENUMS
 
+// Screen Res
 const int SCREEN_WIDTH = 144;
 const int SCREEN_HEIGHT = 160;
+
+// Speed cap
+const int VELOCITY = 2;
 
 //FUNC PROTO
 

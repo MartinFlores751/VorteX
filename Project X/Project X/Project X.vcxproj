@@ -22,12 +22,14 @@
     <ClInclude Include="core.h" />
     <ClInclude Include="LTexture.h" />
     <ClInclude Include="LWindow.h" />
+    <ClInclude Include="Ship.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="coreDef.cpp" />
     <ClCompile Include="LTexture.cpp" />
     <ClCompile Include="LWindow.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Ship.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

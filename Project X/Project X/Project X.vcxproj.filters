@@ -30,6 +30,9 @@
     <ClInclude Include="LTexture.h">
       <Filter>Header Files\classProto</Filter>
     </ClInclude>
+    <ClInclude Include="Ship.h">
+      <Filter>Header Files\classProto</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="coreDef.cpp">
@@ -42,6 +45,9 @@
       <Filter>Source Files\classDef</Filter>
     </ClCompile>
     <ClCompile Include="LWindow.cpp">
+      <Filter>Source Files\classDef</Filter>
+    </ClCompile>
+    <ClCompile Include="Ship.cpp">
       <Filter>Source Files\classDef</Filter>
     </ClCompile>
   </ItemGroup>
