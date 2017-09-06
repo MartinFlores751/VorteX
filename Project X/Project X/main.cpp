@@ -4,20 +4,28 @@
 #include <vector>
 #include "LTexture.h"
 #include "LWindow.h"
-#include "Ship.h"
+#include "PlayerShip.h"
 #include "core.h"
 
 using std::vector;
 using std::string;
 
 LWindow gWindow;
-Ship playerShip;
+PlayerShip pShip(3);
 
 
 /*	Self imposed limitions:
  *	- 4 sound channels only
  *	- 8x8 tiles
  */
+
+/*
+	TO-DO:
+	- Create a score system
+	- Be able to load and save score system
+	- Get a colision system in place
+	- Organize the code better...
+*/
 
 int main(int argc, char* argv[]) {
 	if (!init()) {
@@ -38,16 +46,16 @@ int main(int argc, char* argv[]) {
 					if (e.type == SDL_QUIT) {
 						quit = true;
 					}
-					playerShip.handleInput(e);
+					pShip.handleInput(e);
 				}
 				// Moves the player ship
-				playerShip.move();
+				pShip.move();
 
 				// Clear the screen
 				gWindow.clear();
 
 				// Render sources here
-				playerShip.render(gWindow.getRenderer());
+				pShip.render(gWindow.getRenderer());
 
 				// Present Window
 				gWindow.render();

@@ -33,7 +33,7 @@ public:
 	void render(SDL_Renderer* renderer);
 
 	// General ship destructor
-	~Ship();
+	virtual ~Ship();
 
 private:
 	LTexture mShip;

@@ -20,16 +20,23 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core.h" />
+    <ClInclude Include="GruntShip.h" />
     <ClInclude Include="LTexture.h" />
     <ClInclude Include="LWindow.h" />
+    <ClInclude Include="PlayerShip.h" />
     <ClInclude Include="Ship.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="coreDef.cpp" />
+    <ClCompile Include="GruntShip.cpp" />
     <ClCompile Include="LTexture.cpp" />
     <ClCompile Include="LWindow.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PlayerShip.cpp" />
     <ClCompile Include="Ship.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="img\player_ship.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

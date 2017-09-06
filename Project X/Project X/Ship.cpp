@@ -44,8 +44,8 @@ void Ship::handleInput(SDL_Event& e) {
 		case SDLK_s: yVel += VELOCITY; break;
 		case SDLK_a: xVel-= VELOCITY; break;
 		case SDLK_d: xVel += VELOCITY; break;
-		case SDLK_k: this->fire(); break;
-		case SDLK_m: break;
+		case SDLK_j : this->fire(); break;
+		case SDLK_n: fireSpecial(); break;
 		}
 	}
 	else if (e.type == SDL_KEYUP && e.key.repeat == 0) {

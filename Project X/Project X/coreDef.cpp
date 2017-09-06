@@ -6,10 +6,10 @@
 #include "LTexture.h"
 #include "LWindow.h"
 #include "core.h"
-#include "Ship.h"
+#include "PlayerShip.h"
 
 extern LWindow gWindow;
-extern Ship playerShip;
+extern PlayerShip pShip;
 using std::string;
 
 bool init() {
@@ -61,7 +61,7 @@ bool loadMedia() {
 	bool isGood = true;
 
 	// Initialize textures and stuff here!
-	if (!playerShip.init(gWindow.getRenderer(), "img/player_ship.png")) {
+	if (!pShip.init(gWindow.getRenderer(), "img/player_ship.png")) {
 		printf("File could not be found! Ending program...");
 		isGood = false;
 	}
