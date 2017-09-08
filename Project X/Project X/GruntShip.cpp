@@ -1,4 +1,5 @@
 #include "GruntShip.h"
+#include "core.h"
 #include <stdlib.h>
 #include <time.h>
 
@@ -20,11 +21,14 @@ void GruntShip::handleInput() {
 
 	// Create zig-zag function here
 	if (!isMoving) {
-		// Move from 1 px to the other side of the screen
-		int movPixels = rand() % 144 + 1;
+		// Move from VELOCITY to the other side of the screen
+		numMoves = rand() % (144 / VELOCITY) + 1;
 		
 		// Move left or right?
 		movLeft ? false : true;
+
+		// Set moving states
+		isMoving = true;
 	}
 
 	// If player is in special range && score is so high
@@ -40,10 +44,31 @@ void GruntShip::fireSpecial() {
 	
 }
 
-bool GruntShip::inRange() {
-	// Do a basic circualr collison here to determin if player is within blast radius
+void GruntShip::move() {
+	// Make an oops moment, upcasting to call
+	// over move function...
+	Ship* currentShip = this;
+	if (isMoving) {
+		if (numMoves > 0) {
+			// Retrive needed variables and dec counter
+			int &xVel = getXVel();
+			int &yVel = getYVel();
+			--numMoves;
+
+			// Move left or right
+			if (movLeft)
+				xVel = -VELOCITY;
+			else
+				xVel = VELOCITY;
+
+			// This is stupid, will fix later... >.<
+			currentShip->move();
+		}
+		else
+			isMoving = false;
+	}
 }
 
-GruntShip::~GruntShip(){
-
+bool GruntShip::inRange() {
+	// Do a basic circualr collison here to determin if player is within blast radius
 }

@@ -9,6 +9,9 @@
 const int SCREEN_WIDTH = 144;
 const int SCREEN_HEIGHT = 160;
 
+// The max height that a sprite can appear off screen
+const int Y_BOUND = -16;
+
 // Speed cap
 const int VELOCITY = 2;
 

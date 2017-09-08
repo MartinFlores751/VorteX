@@ -5,6 +5,9 @@
 
 using std::string;
 
+// FIXME: Add a collision detection funciton
+// FIXME: Determine best way to handle collisions
+
 class Ship
 {
 public:
@@ -27,7 +30,13 @@ public:
 	virtual void handleInput(SDL_Event& e);
 
 	// Moves the ship
-	void move();
+	virtual void move();
+
+	// Returns address to xVel
+	int& getXVel();
+	
+	// Returns address to yVel
+	int& getYVel();
 
 	// Render the ship
 	void render(SDL_Renderer* renderer);

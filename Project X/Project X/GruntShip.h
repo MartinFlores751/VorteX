@@ -9,20 +9,20 @@ public:
 	// Handle events differnently
 	virtual void handleInput();
 
-	
-
 	// Self-Destruct! SH-BOOM!
 	virtual void fireSpecial();
 
+	// Grunt's move function
+	virtual void move();
+
 	// Checks if player is in range
 	bool inRange();
-
-	~GruntShip();
 
 private:
 	int scanRadi; // The special ranged attack
 	int numSpecial;
 	bool isMoving;
 	bool movLeft;
+	int numMoves;
 };
 

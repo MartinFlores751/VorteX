@@ -78,6 +78,14 @@ void Ship::move() {
 	}
 }
 
+int& Ship::getXVel() {
+	return xVel;
+}
+
+int& Ship::getYVel() {
+	return yVel;
+}
+
 void Ship::render(SDL_Renderer* renderer) {
 	mShip.render(renderer, xCord, yCord);
 }
