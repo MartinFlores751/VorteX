@@ -9,6 +9,8 @@ public:
 	// Handle events differnently
 	virtual void handleInput();
 
+	virtual void fireSpecial();
+
 	// Checks if player is in range
 	bool inRange();
 
@@ -16,5 +18,6 @@ public:
 
 private:
 	int scanRadi; // The special ranged
+	int numSpecial;
 };
 
