@@ -5,15 +5,15 @@
 
 
 GruntShip::GruntShip(){
-	scanRadi = 0;
+	scanRadi = numMoves = 0;
 	numSpecial = 1;
+	isMoving = movLeft = false;
 }
 
 void GruntShip::handleInput() {
 	static int counter = 0;
 	srand(time(NULL));
-	// Shoot once every 20 frames?
-	// Relying on VSync... Tsk tsk...
+	// Stable but do something better...
 	if (++counter >= 20) {
 		counter = 0;
 		fire();
@@ -25,7 +25,7 @@ void GruntShip::handleInput() {
 		numMoves = rand() % (144 / VELOCITY) + 1;
 		
 		// Move left or right?
-		movLeft ? false : true;
+		movLeft = movLeft ? false : true;
 
 		// Set moving states
 		isMoving = true;
@@ -41,28 +41,30 @@ void GruntShip::handleInput() {
 }
 
 void GruntShip::fireSpecial() {
-	
+	// Initate self destruct sequence
 }
 
-void GruntShip::move() {
+void GruntShip::aiMove() {
 	// Make an oops moment, upcasting to call
 	// over move function...
-	Ship* currentShip = this;
 	if (isMoving) {
 		if (numMoves > 0) {
 			// Retrive needed variables and dec counter
-			int &xVel = getXVel();
-			int &yVel = getYVel();
+			int* xVel = getXVel();
+			int* yVel = getYVel();
 			--numMoves;
+
+			// Set the darn thing to actually move down
+			*yVel = VELOCITY;
 
 			// Move left or right
 			if (movLeft)
-				xVel = -VELOCITY;
+				*xVel = -VELOCITY;
 			else
-				xVel = VELOCITY;
+				*xVel = VELOCITY;
 
 			// This is stupid, will fix later... >.<
-			currentShip->move();
+			move();
 		}
 		else
 			isMoving = false;
@@ -71,4 +73,6 @@ void GruntShip::move() {
 
 bool GruntShip::inRange() {
 	// Do a basic circualr collison here to determin if player is within blast radius
+	// Temp thing
+	return false;
 }

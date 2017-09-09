@@ -5,6 +5,7 @@
 #include "LTexture.h"
 #include "LWindow.h"
 #include "PlayerShip.h"
+#include "GruntShip.h"
 #include "core.h"
 
 using std::vector;
@@ -12,6 +13,8 @@ using std::string;
 
 LWindow gWindow;
 PlayerShip pShip(3);
+GruntShip test;
+LTexture bg;
 
 
 /*	Self imposed limitions:
@@ -48,14 +51,20 @@ int main(int argc, char* argv[]) {
 					}
 					pShip.handleInput(e);
 				}
+				// Process AI event
+				test.handleInput();
+
 				// Moves the player ship
 				pShip.move();
+				test.aiMove();
 
 				// Clear the screen
 				gWindow.clear();
 
 				// Render sources here
+				bg.render(gWindow.getRenderer(), 0, -140);
 				pShip.render(gWindow.getRenderer());
+				test.render(gWindow.getRenderer());
 
 				// Present Window
 				gWindow.render();

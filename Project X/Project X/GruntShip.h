@@ -13,7 +13,7 @@ public:
 	virtual void fireSpecial();
 
 	// Grunt's move function
-	virtual void move();
+	void aiMove();
 
 	// Checks if player is in range
 	bool inRange();

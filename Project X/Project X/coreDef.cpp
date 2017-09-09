@@ -7,9 +7,13 @@
 #include "LWindow.h"
 #include "core.h"
 #include "PlayerShip.h"
+#include "GruntShip.h"
 
 extern LWindow gWindow;
 extern PlayerShip pShip;
+extern GruntShip test;
+extern LTexture bg;
+
 using std::string;
 
 bool init() {
@@ -61,8 +65,20 @@ bool loadMedia() {
 	bool isGood = true;
 
 	// Initialize textures and stuff here!
-	if (!pShip.init(gWindow.getRenderer(), "img/player_ship.png")) {
+	if (!pShip.init(gWindow.getRenderer(), "img/p_ship.png")) {
 		printf("File could not be found! Ending program...");
+		isGood = false;
+	}
+	else
+		pShip.setXY(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 8);
+
+	if (!test.init(gWindow.getRenderer(), "img/p_ship.png")) {
+		printf("File could not be loaded! Ending program...");
+		isGood = false;
+	}
+
+	if (!bg.loadFromFile(gWindow.getRenderer(), "img/bg.png")) {
+		printf("Bad");
 		isGood = false;
 	}
 

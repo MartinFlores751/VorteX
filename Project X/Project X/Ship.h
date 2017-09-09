@@ -33,10 +33,10 @@ public:
 	virtual void move();
 
 	// Returns address to xVel
-	int& getXVel();
+	int* getXVel();
 	
 	// Returns address to yVel
-	int& getYVel();
+	int* getYVel();
 
 	// Render the ship
 	void render(SDL_Renderer* renderer);
