@@ -32,6 +32,12 @@ public:
 	// Moves the ship
 	virtual void move();
 
+	// Checks if there's a collision from bullet
+	void hasCollided();
+
+	// Checks if there's a collision from another ship
+	void hasCollided();
+
 	// Returns address to xVel
 	int* getXVel();
 	

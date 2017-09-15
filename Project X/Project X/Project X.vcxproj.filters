@@ -34,6 +34,12 @@
     <Filter Include="Resource Files\img">
       <UniqueIdentifier>{eb671b9d-bb79-4bd6-b97b-6e5fe6257f35}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\classProto\BulletsProto">
+      <UniqueIdentifier>{6c871eee-f68c-4f5e-ac76-2d4022ca4014}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\classDef\BulletsDef">
+      <UniqueIdentifier>{74b7c110-6334-44f5-a915-47c0d8e21e1b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core.h">
@@ -53,6 +59,9 @@
     </ClInclude>
     <ClInclude Include="GruntShip.h">
       <Filter>Header Files\classProto\ShipsProto</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullets.h">
+      <Filter>Header Files\classProto\BulletsProto</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -76,6 +85,9 @@
     </ClCompile>
     <ClCompile Include="GruntShip.cpp">
       <Filter>Source Files\classDef\ShipsDef</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullets.cpp">
+      <Filter>Source Files\classDef\BulletsDef</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -2,10 +2,6 @@
 #include <stdio.h>
 #include <string>
 #include <vector>
-#include "LTexture.h"
-#include "LWindow.h"
-#include "PlayerShip.h"
-#include "GruntShip.h"
 #include "core.h"
 
 using std::vector;
@@ -42,6 +38,8 @@ int main(int argc, char* argv[]) {
 			// Basic needed elements of the program
 			bool quit = false;
 			SDL_Event e;
+			int BGScroll = -160;
+			SDL_Renderer * renderer = gWindow.getRenderer();
 
 			while (!quit) {
 				if (SDL_PollEvent(&e) != 0) {
@@ -62,9 +60,17 @@ int main(int argc, char* argv[]) {
 				gWindow.clear();
 
 				// Render sources here
-				bg.render(gWindow.getRenderer(), 0, -140);
-				pShip.render(gWindow.getRenderer());
-				test.render(gWindow.getRenderer());
+				if (BGScroll++ < SCREEN_HEIGHT) {
+					bg.render(renderer, 0, BGScroll);
+					bg.render(renderer, 0, BGScroll - (SCREEN_HEIGHT * 2));
+				}
+				else {
+					BGScroll = -SCREEN_HEIGHT;
+					bg.render(renderer, 0, BGScroll);
+					bg.render(renderer, 0, BGScroll - (SCREEN_HEIGHT * 2));
+				}
+				pShip.render(renderer);
+				test.render(renderer);
 
 				// Present Window
 				gWindow.render();

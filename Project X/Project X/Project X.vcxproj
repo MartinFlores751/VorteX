@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bullets.h" />
     <ClInclude Include="core.h" />
     <ClInclude Include="GruntShip.h" />
     <ClInclude Include="LTexture.h" />
@@ -27,6 +28,7 @@
     <ClInclude Include="Ship.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bullets.cpp" />
     <ClCompile Include="coreDef.cpp" />
     <ClCompile Include="GruntShip.cpp" />
     <ClCompile Include="LTexture.cpp" />

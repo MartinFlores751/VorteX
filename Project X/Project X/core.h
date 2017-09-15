@@ -1,6 +1,11 @@
 #ifndef CORE_H_
 #define CORE_H_
 
+#include "LTexture.h"
+#include "LWindow.h"
+#include "PlayerShip.h"
+#include "GruntShip.h"
+
 // #pragma once should work too...
 
 //CONST and ENUMS

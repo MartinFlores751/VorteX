@@ -3,11 +3,7 @@
 #include <stdio.h>
 #include <string>
 #include <sstream>
-#include "LTexture.h"
-#include "LWindow.h"
 #include "core.h"
-#include "PlayerShip.h"
-#include "GruntShip.h"
 
 extern LWindow gWindow;
 extern PlayerShip pShip;
