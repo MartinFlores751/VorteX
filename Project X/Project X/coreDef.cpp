@@ -2,20 +2,26 @@
 #include <SDL_image.h>
 #include <stdio.h>
 #include <string>
-#include <sstream>
+#include <vector>
 #include "core.h"
+#include "LWindow.h"
+#include "PlayerShip.h"
+#include "GruntShip.h"
+
+using std::string;
+using std::vector;
 
 extern LWindow gWindow;
 extern PlayerShip pShip;
-extern GruntShip test;
+extern vector<GruntShip> enemyShips;
+extern vector<Bullets> bullets;
 extern LTexture bg;
-
-using std::string;
+extern LTexture title;
 
 bool init() {
 	bool isGood = true;
 	// Initialize SDL
-	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0) {
+	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
 		printf("Failed to initialize video module! SDL Error: %s \n", SDL_GetError());
 		isGood = false;
 	}
@@ -60,20 +66,42 @@ bool init() {
 bool loadMedia() {
 	bool isGood = true;
 
-	// Initialize textures and stuff here!
-	if (!pShip.init(gWindow.getRenderer(), "img/p_ship.png")) {
+	// Initialize ship
+	if (!pShip.init(gWindow.getRenderer(), "img/pSprite/ship.png")) {
 		printf("File could not be found! Ending program...");
 		isGood = false;
 	}
 	else
 		pShip.setXY(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 8);
 
-	if (!test.init(gWindow.getRenderer(), "img/p_ship.png")) {
-		printf("File could not be loaded! Ending program...");
+	// Initialize enemy ships
+	enemyShips.resize(10);
+	for (GruntShip &gship : enemyShips) {
+		if (!gship.init(gWindow.getRenderer(), "img/smalls/Dragonfly.png")) {
+			printf("Failed to load texture! Ending program...");
+			isGood = false;
+			break;
+		}
+	}
+
+	// Init the bullets
+	bullets.resize(10);
+	for (Bullets &bullet : bullets) {
+		if (!bullet.init(gWindow.getRenderer(), "img/pSprite/missile.png")) {
+			printf("Failed to load bullet sprite! Ending program...");
+			isGood = false;
+			break;
+		}
+	}
+
+	// Load title screen
+	if (!title.loadFromFile(gWindow.getRenderer(), "img/INTRO/t_all.png")) {
+		printf("Title screen failed to load! Ending program now!");
 		isGood = false;
 	}
 
-	if (!bg.loadFromFile(gWindow.getRenderer(), "img/bg.png")) {
+	// Load gameBG
+	if (!bg.loadFromFile(gWindow.getRenderer(), "img/BG/bg1.png")) {
 		printf("Bad");
 		isGood = false;
 	}

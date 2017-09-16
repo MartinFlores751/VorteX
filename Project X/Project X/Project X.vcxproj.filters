@@ -31,14 +31,29 @@
     <Filter Include="Header Files\Default">
       <UniqueIdentifier>{fa2acda3-bfef-403d-848d-a73ba4be6827}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\img">
-      <UniqueIdentifier>{eb671b9d-bb79-4bd6-b97b-6e5fe6257f35}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\classProto\BulletsProto">
       <UniqueIdentifier>{6c871eee-f68c-4f5e-ac76-2d4022ca4014}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\classDef\BulletsDef">
       <UniqueIdentifier>{74b7c110-6334-44f5-a915-47c0d8e21e1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\img">
+      <UniqueIdentifier>{6a796dcd-c693-487e-82c8-0246aa2b09bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\img\smalls">
+      <UniqueIdentifier>{f90d8dbd-3a92-4a00-977e-523753f8f4d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\img\pSprite">
+      <UniqueIdentifier>{74446890-3a72-4923-a72f-fb4b7117ac82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\img\INTRO">
+      <UniqueIdentifier>{14ea17c0-45bc-43a1-97df-168bcc427ea3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\img\BG">
+      <UniqueIdentifier>{ce211192-a87f-4f97-bdaf-4ed9ff4ecbd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\img\boss">
+      <UniqueIdentifier>{eb8ee4b8-2d5d-43fb-8579-9733647cbeac}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -91,8 +106,56 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="img\player_ship.png">
-      <Filter>Resource Files\img</Filter>
+    <Image Include="img\smalls\Dragonfly.png">
+      <Filter>Resource Files\img\smalls</Filter>
+    </Image>
+    <Image Include="img\smalls\GOGAS.png">
+      <Filter>Resource Files\img\smalls</Filter>
+    </Image>
+    <Image Include="img\smalls\MotherShip.png">
+      <Filter>Resource Files\img\smalls</Filter>
+    </Image>
+    <Image Include="img\pSprite\missile.png">
+      <Filter>Resource Files\img\pSprite</Filter>
+    </Image>
+    <Image Include="img\pSprite\ship.png">
+      <Filter>Resource Files\img\pSprite</Filter>
+    </Image>
+    <Image Include="img\smalls\E-Leets.png">
+      <Filter>Resource Files\img\smalls</Filter>
+    </Image>
+    <Image Include="img\INTRO\Space Title by ITSELF.png">
+      <Filter>Resource Files\img\INTRO</Filter>
+    </Image>
+    <Image Include="img\INTRO\Space Title SHIP FOR FLY IN.png">
+      <Filter>Resource Files\img\INTRO</Filter>
+    </Image>
+    <Image Include="img\INTRO\Space Title with BLADE LOGO.png">
+      <Filter>Resource Files\img\INTRO</Filter>
+    </Image>
+    <Image Include="img\boss\Alpha.png">
+      <Filter>Resource Files\img\boss</Filter>
+    </Image>
+    <Image Include="img\boss\Asteroid or egg.png">
+      <Filter>Resource Files\img\boss</Filter>
+    </Image>
+    <Image Include="img\boss\CANTOLE.png">
+      <Filter>Resource Files\img\boss</Filter>
+    </Image>
+    <Image Include="img\boss\GO-ZO_11.png">
+      <Filter>Resource Files\img\boss</Filter>
+    </Image>
+    <Image Include="img\boss\QUEEN.png">
+      <Filter>Resource Files\img\boss</Filter>
+    </Image>
+    <Image Include="img\boss\VENIN.png">
+      <Filter>Resource Files\img\boss</Filter>
+    </Image>
+    <Image Include="img\BG\bg1.png">
+      <Filter>Resource Files\img\BG</Filter>
+    </Image>
+    <Image Include="img\INTRO\t_all.png">
+      <Filter>Resource Files\img\INTRO</Filter>
     </Image>
   </ItemGroup>
 </Project>

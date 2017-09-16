@@ -1,5 +1,6 @@
 #pragma once
 #include "Ship.h"
+
 class GruntShip :
 	public Ship
 {
@@ -7,7 +8,7 @@ public:
 	GruntShip();
 
 	// Handle events differnently
-	virtual void handleInput();
+	virtual void handleInput(vector<Bullets> *bullets, bool isPlayer = false);
 
 	// Self-Destruct! SH-BOOM!
 	virtual void fireSpecial();

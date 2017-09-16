@@ -38,7 +38,23 @@
     <ClCompile Include="Ship.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="img\player_ship.png" />
+    <Image Include="img\BG\bg1.png" />
+    <Image Include="img\boss\Alpha.png" />
+    <Image Include="img\boss\Asteroid or egg.png" />
+    <Image Include="img\boss\CANTOLE.png" />
+    <Image Include="img\boss\GO-ZO_11.png" />
+    <Image Include="img\boss\QUEEN.png" />
+    <Image Include="img\boss\VENIN.png" />
+    <Image Include="img\INTRO\Space Title by ITSELF.png" />
+    <Image Include="img\INTRO\Space Title SHIP FOR FLY IN.png" />
+    <Image Include="img\INTRO\t_all.png" />
+    <Image Include="img\INTRO\Space Title with BLADE LOGO.png" />
+    <Image Include="img\pSprite\missile.png" />
+    <Image Include="img\pSprite\ship.png" />
+    <Image Include="img\smalls\Dragonfly.png" />
+    <Image Include="img\smalls\E-Leets.png" />
+    <Image Include="img\smalls\GOGAS.png" />
+    <Image Include="img\smalls\MotherShip.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

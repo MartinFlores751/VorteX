@@ -10,13 +10,13 @@ GruntShip::GruntShip(){
 	isMoving = movLeft = false;
 }
 
-void GruntShip::handleInput() {
+void GruntShip::handleInput(vector<Bullets> *bullets, bool isPlayer) {
 	static int counter = 0;
 	srand(time(NULL));
 	// Stable but do something better...
 	if (++counter >= 20) {
 		counter = 0;
-		fire();
+		fire(bullets, isPlayer);
 	}
 
 	// Create zig-zag function here
