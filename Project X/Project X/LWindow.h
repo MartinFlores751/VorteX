@@ -40,7 +40,7 @@ private:
 	// Window data
 	SDL_Window* mWindow;
 	SDL_Renderer* mRenderer;
-	int mWindowID;
+	Uint32 mWindowID;
 
 	// Window dimensions
 	int mWidth;

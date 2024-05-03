@@ -28,7 +28,7 @@ LTexture title;
 	- Get a colision system in place
 */
 
-int main(int argc, char* argv[]) {
+int main() {
 	if (!init()) {
 		printf("An error has occured while initializing!\n");
 	}
@@ -61,7 +61,7 @@ int main(int argc, char* argv[]) {
 				if (gamePlaying) {
 					// Process AI event
 					for (GruntShip &gship : enemyShips)
-						gship.handleInput(&bullets);
+						gship.handleInput(e, &bullets);
 
 					// Move the bullets
 					for (Bullets &bullet : bullets)

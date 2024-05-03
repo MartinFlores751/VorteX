@@ -103,7 +103,6 @@ bool Ship::hasCollided(vector<Bullets> *bullets) {
 bool Ship::hasCollided(vector<Ship> *gShips) {
 	int xShip, yShip;
 	for (Ship &ship : *gShips) {
-		xShip, yShip;
 		xShip = ship.getXCords();
 		yShip = ship.getYCords();
 

@@ -3,7 +3,7 @@
 
 
 
-Bullets::Bullets(int x, int y, bool fromP){
+Bullets::Bullets(int x, int y, [[maybe_unused]] bool fromP){
 	xAxis = x;
 	yAxis = y;
 	onScreen = false;
@@ -22,14 +22,19 @@ void Bullets::render(SDL_Renderer* renderer) {
 }
 
 void Bullets::move() {
-	if (onScreen)
-		if ((xAxis >= 0 && xAxis + LEN_HEIGHT <= SCREEN_WIDTH) && (yAxis >= -8 && yAxis + LEN_HEIGHT <= SCREEN_HEIGHT + 8))
-			if (fromPlayer)
+	if (onScreen) {
+		if ((xAxis >= 0 && xAxis + LEN_HEIGHT <= SCREEN_WIDTH) && (yAxis >= -8 && yAxis + LEN_HEIGHT <= SCREEN_HEIGHT + 8)) {
+			if (fromPlayer) {
 				yAxis -= 2;
-			else
+			}
+			else {
 				yAxis += 2;
-		else
+			}
+		}
+		else {
 			onScreen = false;
+		}
+	}
 }
 
 bool Bullets::init(SDL_Renderer* renderer, string path) {

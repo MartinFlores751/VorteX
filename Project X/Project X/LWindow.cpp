@@ -53,10 +53,10 @@ bool LWindow::init() {
 void LWindow::handleEvent(SDL_Event& e) {
 	//Window event occured
 
-	if (e.type == SDL_WINDOWEVENT) {
+	if (e.type == SDL_WINDOWEVENT && e.window.windowID == mWindowID) {
 		// Caption update flag
 		bool updateCaption = false;
-		switch (e.window.event  && e.window.windowID == mWindowID) {
+		switch (e.window.event) {
 			// Window appeared
 		case SDL_WINDOWEVENT_SHOWN:
 			mShown = true;

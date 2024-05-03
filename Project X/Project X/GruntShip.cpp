@@ -10,7 +10,7 @@ GruntShip::GruntShip(){
 	isMoving = movLeft = false;
 }
 
-void GruntShip::handleInput(vector<Bullets> *bullets, bool isPlayer) {
+void GruntShip::handleInput([[maybe_unused]] SDL_Event& e, vector<Bullets> *bullets, bool isPlayer) {
 	static int counter = 0;
 	srand(time(NULL));
 	// Stable but do something better...
