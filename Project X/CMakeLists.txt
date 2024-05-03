@@ -1,9 +1,8 @@
 cmake_minimum_required(VERSION 3.15)
 
-project(VorteX VERSION 0.9)
-
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+project(VorteX
+    VERSION 0.9
+    LANGUAGES CXX)
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/sdl2)
 
@@ -23,3 +22,12 @@ add_executable(
     "Project X/Ship.cpp")
 
 target_link_libraries(VorteX SDL2::Main SDL2::Image SDL2::Mixer)
+
+set_target_properties(VorteX PROPERTIES
+    CXX_STANDARD 20
+    CXX_STANDARD_REQUIRED ON
+    CXX_EXTENSIONS OFF)
+
+target_compile_options(VorteX PRIVATE
+    $<$<CXX_COMPILER_ID:MSVC>:/W4 /WX>
+    $<$<CXX_COMPILER_ID:GNU>:-Wall -Wextra -Wpedantic -Werror>)
