@@ -1,0 +1,8 @@
+# Use template
+BasedOnStyle:  LLVM
+
+# Desired adjustments
+AlignArrayOfStructures: Right
+AllowShortBlocksOnASingleLine: Empty
+AllowShortFunctionsOnASingleLine: Empty
+InsertBraces: true
