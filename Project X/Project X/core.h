@@ -3,7 +3,7 @@
 
 // #pragma once should work too...
 
-//CONST and ENUMS
+// CONST and ENUMS
 
 // Screen Res
 const int SCREEN_WIDTH = 144;
@@ -18,7 +18,7 @@ const int Y_BOUND = -16;
 // Speed cap
 const int VELOCITY = 2;
 
-//FUNC PROTO
+// FUNC PROTO
 
 bool init();
 bool loadMedia();

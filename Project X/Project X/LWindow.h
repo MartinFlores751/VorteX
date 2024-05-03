@@ -2,54 +2,54 @@
 
 class LWindow {
 public:
-	// Initializes internals
-	LWindow();
+  // Initializes internals
+  LWindow();
 
-	// Creates window
-	bool init();
+  // Creates window
+  bool init();
 
-	// Handels window events
-	void handleEvent(SDL_Event& e);
+  // Handels window events
+  void handleEvent(SDL_Event &e);
 
-	// Focuses on window
-	void focus();
+  // Focuses on window
+  void focus();
 
-	// Shows windows contents
-	void render();
+  // Shows windows contents
+  void render();
 
-	// Clear the window
-	void clear();
+  // Clear the window
+  void clear();
 
-	// Deallocates internals
-	void free();
+  // Deallocates internals
+  void free();
 
-	// Window dimensions
-	int getWidth();
-	int getHeight();
+  // Window dimensions
+  int getWidth();
+  int getHeight();
 
-	// Give renderer for img processing
-	SDL_Renderer* getRenderer();
+  // Give renderer for img processing
+  SDL_Renderer *getRenderer();
 
-	// Window focii
-	bool hasMouseFocus();
-	bool hasKeyboardFocus();
-	bool isMinimized();
-	bool isShown();
+  // Window focii
+  bool hasMouseFocus();
+  bool hasKeyboardFocus();
+  bool isMinimized();
+  bool isShown();
 
 private:
-	// Window data
-	SDL_Window* mWindow;
-	SDL_Renderer* mRenderer;
-	Uint32 mWindowID;
+  // Window data
+  SDL_Window *mWindow;
+  SDL_Renderer *mRenderer;
+  Uint32 mWindowID;
 
-	// Window dimensions
-	int mWidth;
-	int mHeight;
+  // Window dimensions
+  int mWidth;
+  int mHeight;
 
-	// Window focus
-	bool mMouseFocus;
-	bool mKeyboardFocus;
-	bool mFullScreen;
-	bool mMinimized;
-	bool mShown;
+  // Window focus
+  bool mMouseFocus;
+  bool mKeyboardFocus;
+  bool mFullScreen;
+  bool mMinimized;
+  bool mShown;
 };
