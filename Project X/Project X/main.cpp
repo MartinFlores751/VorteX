@@ -43,7 +43,7 @@ int main() {
       bool gamePlaying = false;
 
       while (!quit) {
-        if (SDL_PollEvent(&e) != 0) {
+        while (SDL_PollEvent(&e) != 0) {
           // Exit the program?
           if (e.type == SDL_QUIT || e.key.keysym.sym == SDLK_ESCAPE) {
             quit = true;
