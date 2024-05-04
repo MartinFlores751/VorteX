@@ -6,3 +6,4 @@ AlignArrayOfStructures: Right
 AllowShortBlocksOnASingleLine: Empty
 AllowShortFunctionsOnASingleLine: Empty
 InsertBraces: true
+PointerAlignment: Left
