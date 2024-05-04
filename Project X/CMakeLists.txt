@@ -4,11 +4,12 @@ project(VorteX
     VERSION 0.9
     LANGUAGES CXX)
 
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/sdl2)
-
 find_package(SDL2 REQUIRED)
 find_package(SDL2_image REQUIRED)
 find_package(SDL2_mixer REQUIRED)
+
+find_package(spdlog REQUIRED)
+find_package(fmt REQUIRED)
 
 add_executable(
     VorteX
@@ -21,7 +22,7 @@ add_executable(
     "Project X/LTexture.cpp"
     "Project X/Ship.cpp")
 
-target_link_libraries(VorteX SDL2::Main SDL2::Image SDL2::Mixer)
+target_link_libraries(VorteX SDL2 SDL2_image::SDL2_image SDL2_mixer fmt spdlog)
 
 set_target_properties(VorteX PROPERTIES
     CXX_STANDARD 20
