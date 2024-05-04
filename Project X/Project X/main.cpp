@@ -2,8 +2,9 @@
 #include "LWindow.h"
 #include "PlayerShip.h"
 #include "core.h"
+
 #include <SDL2/SDL.h>
-#include <stdio.h>
+#include <spdlog/spdlog.h>
 #include <vector>
 
 using std::string;
@@ -29,10 +30,10 @@ LTexture title;
 
 int main() {
   if (!init()) {
-    printf("An error has occured while initializing!\n");
+    spdlog::error("An error has occured while initializing!\n");
   } else {
     if (!loadMedia()) {
-      printf("Media could not be loaded!\n");
+      spdlog::error("Media could not be loaded!\n");
     } else {
       // Basic needed elements of the program
       bool quit = false;
