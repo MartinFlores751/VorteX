@@ -109,7 +109,7 @@ bool loadMedia() {
 
   // Load gameBG
   if (!bg.loadFromFile(gWindow.getRenderer(), "img/BG/bg1.png")) {
-    spdlog::error("Bad");
+    spdlog::error("Failed to load background for game. Ending program.");
     isGood = false;
   }
 
