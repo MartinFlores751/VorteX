@@ -1,6 +1,9 @@
 #include "LTexture.h"
+
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <spdlog/spdlog.h>
+
 #include <string>
 
 using std::string;
@@ -20,13 +23,15 @@ bool LTexture::loadFromFile(SDL_Renderer* renderer, string path) {
   SDL_Texture* newTexture = nullptr;
   SDL_Surface* loadedSurface = IMG_Load(path.c_str());
   if (loadedSurface == nullptr) {
-    printf("Failed to load image! SDL Image Error: %s \n", IMG_GetError());
+    spdlog::error("Failed to load image! SDL Image Error: [{}]",
+                  IMG_GetError());
   } else {
     SDL_SetColorKey(loadedSurface, 1,
                     SDL_MapRGB(loadedSurface->format, 0xFF, 0xFF, 0xFF));
     newTexture = SDL_CreateTextureFromSurface(renderer, loadedSurface);
     if (newTexture == nullptr) {
-      printf("Failed to create texture! SDL Error: %s \n", SDL_GetError());
+      spdlog::error("Failed to create texture! SDL Error: [{}]",
+                    SDL_GetError());
     } else {
       mHeight = loadedSurface->h;
       mWidth = loadedSurface->w;
@@ -45,13 +50,13 @@ bool LTexture::loadFromRenderedText(SDL_Renderer* renderer, string textureText,
   SDL_Surface* textSurface =
       TTF_RenderText_Blended(gFont, textureText.c_str(), textColor);
   if (textSurface == nullptr) {
-    printf("Unable to render text surface! SDL_tff Error: %s \n",
-           TTF_GetError());
+    spdlog::error("Unable to render text surface! SDL_tff Error: [{}]",
+                  TTF_GetError());
   } else {
     mTexture = SDL_CreateTextureFromSurface(renderer, textSurface);
     if (mTexture == nullptr) {
-      printf("Unable to create texture from surface! SDL Error: %s \n",
-             SDL_GetError());
+      spdlog::error("Unable to create texture from surface! SDL Error: [{}]",
+                    SDL_GetError());
     } else {
       mWidth = textSurface->w;
       mHeight = textSurface->h;

@@ -1,7 +1,11 @@
 #include "LWindow.h"
 #include "core.h"
+
 #include <SDL2/SDL.h>
+#include <spdlog/spdlog.h>
+
 #include <sstream>
+
 
 extern SDL_Renderer* gRenderer;
 
@@ -31,7 +35,8 @@ bool LWindow::init() {
     mRenderer = SDL_CreateRenderer(
         mWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
     if (mRenderer == nullptr) {
-      printf("Renderer could not be created! SDL Error: %s\n", SDL_GetError());
+      spdlog::error("Renderer could not be created! SDL Error: [{}]",
+                    SDL_GetError());
       SDL_DestroyWindow(mWindow);
       mWindow = nullptr;
     } else {
@@ -45,7 +50,8 @@ bool LWindow::init() {
       mShown = true;
     }
   } else {
-    printf("Window could not be created! SDL Error: %s\n", SDL_GetError());
+    spdlog::error("Window could not be created! SDL Error: [{}]",
+                  SDL_GetError());
   }
 
   return mWindow != nullptr && mRenderer != nullptr;

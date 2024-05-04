@@ -1,6 +1,7 @@
 #include "Ship.h"
 #include "core.h"
-#include <stdio.h>
+
+#include <spdlog/spdlog.h>
 
 using std::string;
 using std::vector;
@@ -14,7 +15,8 @@ Ship::Ship(int special) {
 bool Ship::init(SDL_Renderer* renderer, string file) {
   bool isGood = true;
   if (!mShip.loadFromFile(renderer, file.c_str())) {
-    printf("An error has occured trying to render the ship! ending ship now!");
+    spdlog::error(
+        "An error has occured trying to render the ship! ending ship now!");
     isGood = false;
   }
   return isGood;
@@ -40,7 +42,7 @@ void Ship::fire(vector<Bullets>* bullets, bool isPlayer) {
 
 void Ship::fireSpecial() {
   if (numSpecial-- > 0) {
-    printf("Special attack go!!!");
+    spdlog::error("Special attack go!!!");
   }
 }
 
