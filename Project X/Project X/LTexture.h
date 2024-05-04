@@ -9,11 +9,11 @@ public:
   ~LTexture();
 
   // Loads image from specified path
-  bool loadFromFile(SDL_Renderer *renderer, std::string path);
+  bool loadFromFile(SDL_Renderer* renderer, std::string path);
 
 #ifdef _SDL_TTF_H
   // Creates image from font string
-  bool loadFromRenderedText(SDL_Renderer *renderer, std::string textureText,
+  bool loadFromRenderedText(SDL_Renderer* renderer, std::string textureText,
                             SDL_Color textColor);
 #endif
 
@@ -30,8 +30,8 @@ public:
   void setAlpha(Uint8 alpha);
 
   // Renders texture at given point
-  void render(SDL_Renderer *renderer, int x, int y, SDL_Rect *clip = nullptr,
-              double angle = 0.0, SDL_Point *center = nullptr,
+  void render(SDL_Renderer* renderer, int x, int y, SDL_Rect* clip = nullptr,
+              double angle = 0.0, SDL_Point* center = nullptr,
               SDL_RendererFlip flip = SDL_FLIP_NONE);
 
   // Return image dimensions
@@ -39,7 +39,7 @@ public:
   int getWidth();
 
 private:
-  SDL_Texture *mTexture;
+  SDL_Texture* mTexture;
   int mHeight;
   int mWidth;
 };

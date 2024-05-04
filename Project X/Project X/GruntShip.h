@@ -6,7 +6,7 @@ public:
   GruntShip();
 
   // Handle events differnently
-  virtual void handleInput(SDL_Event &e, vector<Bullets> *bullets,
+  virtual void handleInput(SDL_Event& e, vector<Bullets>* bullets,
                            bool isPlayer = false) override;
 
   // Self-Destruct! SH-BOOM!

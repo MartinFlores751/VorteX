@@ -38,7 +38,7 @@ int main() {
       bool quit = false;
       SDL_Event e;
       int BGScroll = -160;
-      SDL_Renderer *renderer = gWindow.getRenderer();
+      SDL_Renderer* renderer = gWindow.getRenderer();
       bool gamePlaying = false;
 
       while (!quit) {
@@ -59,12 +59,12 @@ int main() {
         }
         if (gamePlaying) {
           // Process AI event
-          for (GruntShip &gship : enemyShips) {
+          for (GruntShip& gship : enemyShips) {
             gship.handleInput(e, &bullets);
           }
 
           // Move the bullets
-          for (Bullets &bullet : bullets) {
+          for (Bullets& bullet : bullets) {
             bullet.move();
           }
 
@@ -72,7 +72,7 @@ int main() {
           pShip.move();
 
           // Move Enemy
-          for (GruntShip &gship : enemyShips) {
+          for (GruntShip& gship : enemyShips) {
             gship.aiMove();
           }
 
@@ -89,13 +89,13 @@ int main() {
             bg.render(renderer, 0, BGScroll - (SCREEN_HEIGHT * 2));
           }
           // Render bullets
-          for (Bullets &bullet : bullets) {
+          for (Bullets& bullet : bullets) {
             bullet.render(renderer);
           }
 
           // Render ships
           pShip.render(renderer);
-          for (GruntShip &gship : enemyShips) {
+          for (GruntShip& gship : enemyShips) {
             gship.render(renderer);
           }
         } else {

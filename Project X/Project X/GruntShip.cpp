@@ -9,8 +9,8 @@ GruntShip::GruntShip() {
   isMoving = movLeft = false;
 }
 
-void GruntShip::handleInput([[maybe_unused]] SDL_Event &e,
-                            vector<Bullets> *bullets, bool isPlayer) {
+void GruntShip::handleInput([[maybe_unused]] SDL_Event& e,
+                            vector<Bullets>* bullets, bool isPlayer) {
   static int counter = 0;
   srand(time(NULL));
   // Stable but do something better...
@@ -51,8 +51,8 @@ void GruntShip::aiMove() {
   if (isMoving) {
     if (numMoves > 0) {
       // Retrive needed variables and dec counter
-      int *xVel = getXVel();
-      int *yVel = getYVel();
+      int* xVel = getXVel();
+      int* yVel = getYVel();
       --numMoves;
 
       // Set the darn thing to actually move down

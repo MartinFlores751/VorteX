@@ -80,7 +80,7 @@ bool loadMedia() {
 
   // Initialize enemy ships
   enemyShips.resize(10);
-  for (GruntShip &gship : enemyShips) {
+  for (GruntShip& gship : enemyShips) {
     if (!gship.init(gWindow.getRenderer(), "img/smalls/Dragonfly.png")) {
       printf("Failed to load texture! Ending program...");
       isGood = false;
@@ -90,7 +90,7 @@ bool loadMedia() {
 
   // Init the bullets
   bullets.resize(10);
-  for (Bullets &bullet : bullets) {
+  for (Bullets& bullet : bullets) {
     if (!bullet.init(gWindow.getRenderer(), "img/pSprite/missile.png")) {
       printf("Failed to load bullet sprite! Ending program...");
       isGood = false;

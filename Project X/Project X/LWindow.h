@@ -9,7 +9,7 @@ public:
   bool init();
 
   // Handels window events
-  void handleEvent(SDL_Event &e);
+  void handleEvent(SDL_Event& e);
 
   // Focuses on window
   void focus();
@@ -28,7 +28,7 @@ public:
   int getHeight();
 
   // Give renderer for img processing
-  SDL_Renderer *getRenderer();
+  SDL_Renderer* getRenderer();
 
   // Window focii
   bool hasMouseFocus();
@@ -38,8 +38,8 @@ public:
 
 private:
   // Window data
-  SDL_Window *mWindow;
-  SDL_Renderer *mRenderer;
+  SDL_Window* mWindow;
+  SDL_Renderer* mRenderer;
   Uint32 mWindowID;
 
   // Window dimensions

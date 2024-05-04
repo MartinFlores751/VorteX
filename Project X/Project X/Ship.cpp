@@ -11,7 +11,7 @@ Ship::Ship(int special) {
   numSpecial = special;
 }
 
-bool Ship::init(SDL_Renderer *renderer, string file) {
+bool Ship::init(SDL_Renderer* renderer, string file) {
   bool isGood = true;
   if (!mShip.loadFromFile(renderer, file.c_str())) {
     printf("An error has occured trying to render the ship! ending ship now!");
@@ -25,8 +25,8 @@ void Ship::setXY(int x, int y) {
   yCord = y;
 }
 
-void Ship::fire(vector<Bullets> *bullets, bool isPlayer) {
-  for (Bullets &bullet : *bullets) {
+void Ship::fire(vector<Bullets>* bullets, bool isPlayer) {
+  for (Bullets& bullet : *bullets) {
     if (!bullet.isOnScreen()) {
       if (isPlayer) {
         bullet.setXY(xCord, yCord - LEN_HEIGHT, true);
@@ -44,7 +44,7 @@ void Ship::fireSpecial() {
   }
 }
 
-void Ship::handleInput(SDL_Event &e, vector<Bullets> *bullets, bool isPlayer) {
+void Ship::handleInput(SDL_Event& e, vector<Bullets>* bullets, bool isPlayer) {
   if (e.type == SDL_KEYDOWN && e.key.repeat == 0) {
     switch (e.key.keysym.sym) {
     case SDLK_UP:
@@ -102,9 +102,9 @@ void Ship::move() {
   }
 }
 
-bool Ship::hasCollided(vector<Bullets> *bullets) {
+bool Ship::hasCollided(vector<Bullets>* bullets) {
   int xBullet, yBullet;
-  for (Bullets &bullet : *bullets) {
+  for (Bullets& bullet : *bullets) {
     xBullet = bullet.getXCord();
     yBullet = bullet.getYCord();
 
@@ -119,9 +119,9 @@ bool Ship::hasCollided(vector<Bullets> *bullets) {
   return false;
 }
 
-bool Ship::hasCollided(vector<Ship> *gShips) {
+bool Ship::hasCollided(vector<Ship>* gShips) {
   int xShip, yShip;
-  for (Ship &ship : *gShips) {
+  for (Ship& ship : *gShips) {
     xShip = ship.getXCords();
     yShip = ship.getYCords();
 
@@ -136,11 +136,11 @@ bool Ship::hasCollided(vector<Ship> *gShips) {
   return false;
 }
 
-int *Ship::getXVel() {
+int* Ship::getXVel() {
   return &xVel;
 }
 
-int *Ship::getYVel() {
+int* Ship::getYVel() {
   return &yVel;
 }
 
@@ -152,7 +152,7 @@ int Ship::getYCords() {
   return yCord;
 }
 
-void Ship::render(SDL_Renderer *renderer) {
+void Ship::render(SDL_Renderer* renderer) {
   mShip.render(renderer, xCord, yCord);
 }
 

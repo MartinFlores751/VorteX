@@ -3,7 +3,7 @@
 #include <SDL2/SDL.h>
 #include <sstream>
 
-extern SDL_Renderer *gRenderer;
+extern SDL_Renderer* gRenderer;
 
 LWindow::LWindow() {
   // Initialize window values
@@ -51,7 +51,7 @@ bool LWindow::init() {
   return mWindow != nullptr && mRenderer != nullptr;
 }
 
-void LWindow::handleEvent(SDL_Event &e) {
+void LWindow::handleEvent(SDL_Event& e) {
   // Window event occured
 
   if (e.type == SDL_WINDOWEVENT && e.window.windowID == mWindowID) {
@@ -180,7 +180,7 @@ int LWindow::getHeight() {
   return mHeight;
 }
 
-SDL_Renderer *LWindow::getRenderer() {
+SDL_Renderer* LWindow::getRenderer() {
   return mRenderer;
 }
 

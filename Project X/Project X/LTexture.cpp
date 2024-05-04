@@ -15,10 +15,10 @@ LTexture::~LTexture() {
   freeTexture();
 }
 
-bool LTexture::loadFromFile(SDL_Renderer *renderer, string path) {
+bool LTexture::loadFromFile(SDL_Renderer* renderer, string path) {
   freeTexture();
-  SDL_Texture *newTexture = nullptr;
-  SDL_Surface *loadedSurface = IMG_Load(path.c_str());
+  SDL_Texture* newTexture = nullptr;
+  SDL_Surface* loadedSurface = IMG_Load(path.c_str());
   if (loadedSurface == nullptr) {
     printf("Failed to load image! SDL Image Error: %s \n", IMG_GetError());
   } else {
@@ -38,11 +38,11 @@ bool LTexture::loadFromFile(SDL_Renderer *renderer, string path) {
 }
 
 #ifdef _SDL_TTF_H
-bool LTexture::loadFromRenderedText(SDL_Renderer *renderer, string textureText,
+bool LTexture::loadFromRenderedText(SDL_Renderer* renderer, string textureText,
                                     SDL_Color textColor) {
   freeTexture();
   SDL_Color bg = {255, 255, 255};
-  SDL_Surface *textSurface =
+  SDL_Surface* textSurface =
       TTF_RenderText_Blended(gFont, textureText.c_str(), textColor);
   if (textSurface == nullptr) {
     printf("Unable to render text surface! SDL_tff Error: %s \n",
@@ -83,8 +83,8 @@ void LTexture::setAlpha(Uint8 alpha) {
   SDL_SetTextureAlphaMod(mTexture, alpha);
 }
 
-void LTexture::render(SDL_Renderer *renderer, int x, int y, SDL_Rect *clip,
-                      double angle, SDL_Point *center, SDL_RendererFlip flip) {
+void LTexture::render(SDL_Renderer* renderer, int x, int y, SDL_Rect* clip,
+                      double angle, SDL_Point* center, SDL_RendererFlip flip) {
   SDL_Rect renderQuad = {x, y, mWidth, mHeight};
   if (clip != nullptr) {
     renderQuad.w = clip->w;

@@ -14,7 +14,7 @@ void Bullets::setXY(int x, int y, bool fromP) {
   onScreen = true;
 }
 
-void Bullets::render(SDL_Renderer *renderer) {
+void Bullets::render(SDL_Renderer* renderer) {
   if (onScreen) {
     missile.render(renderer, xAxis, yAxis);
   }
@@ -35,7 +35,7 @@ void Bullets::move() {
   }
 }
 
-bool Bullets::init(SDL_Renderer *renderer, string path) {
+bool Bullets::init(SDL_Renderer* renderer, string path) {
   return missile.loadFromFile(renderer, path.c_str());
 }
 

@@ -12,13 +12,13 @@ public:
   void setXY(int x, int y, bool fromP);
 
   // Render the bullet to the screen
-  void render(SDL_Renderer *renderer);
+  void render(SDL_Renderer* renderer);
 
   // Moves the bullet
   void move();
 
   // Initialize the bullet texture
-  bool init(SDL_Renderer *renderer, string path);
+  bool init(SDL_Renderer* renderer, string path);
 
   // Returns if the bullet is on screen or not
   bool isOnScreen();
